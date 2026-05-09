@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "semi": ["error", "always"],
+    "eqeqeq": "warn",
+    "no-var": "error",
+    "prefer-const": "warn"
+  }
+}

@@ -1,0 +1,70 @@
+<div class="container">
+  <h1>Roman Numeral Converter</h1>
+
+  <div class="sections">
+
+    <!-- Integer → Roman -->
+    <div class="card">
+      <h2>Integer to Roman</h2>
+      <form [formGroup]="toRomanForm" (ngSubmit)="convertToRoman()">
+        <div class="field">
+          <label for="number">Enter a number (1–3999)</label>
+          <input
+            id="number"
+            type="number"
+            formControlName="number"
+            placeholder="e.g. 42"
+            min="1"
+            max="3999"
+          />
+          @if (numberControl?.invalid && numberControl?.touched) {
+            <span class="validation-error">Please enter a valid integer between 1 and 3999.</span>
+          }
+        </div>
+        <button type="submit" [disabled]="toRomanForm.invalid">Convert</button>
+      </form>
+
+      @if (romanResult !== null) {
+        <div class="result">
+          <span class="label">Roman numeral:</span>
+          <span class="value">{{ romanResult }}</span>
+        </div>
+      }
+      @if (toRomanError) {
+        <div class="error">{{ toRomanError }}</div>
+      }
+    </div>
+
+    <!-- Roman → Integer -->
+    <div class="card">
+      <h2>Roman to Integer</h2>
+      <form [formGroup]="toIntegerForm" (ngSubmit)="convertToInteger()">
+        <div class="field">
+          <label for="roman">Enter a Roman numeral</label>
+          <input
+            id="roman"
+            type="text"
+            formControlName="roman"
+            placeholder="e.g. XLII"
+            maxlength="15"
+          />
+          @if (romanControl?.invalid && romanControl?.touched) {
+            <span class="validation-error">Please enter a valid Roman numeral (I, V, X, L, C, D, M only).</span>
+          }
+        </div>
+        <button type="submit" [disabled]="toIntegerForm.invalid">Convert</button>
+      </form>
+
+      @if (integerResult !== null) {
+        <div class="result">
+          <span class="label">Integer value:</span>
+          <span class="value">{{ integerResult }}</span>
+        </div>
+      }
+      @if (toIntegerError) {
+        <div class="error">{{ toIntegerError }}</div>
+      }
+    </div>
+
+  </div>
+</div>

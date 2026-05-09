@@ -1,0 +1,120 @@
+.container {
+  max-width: 860px;
+  margin: 48px auto;
+  padding: 0 24px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #1a1a2e;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.sections {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 280px;
+  background: #f5f7fa;
+  border: 1px solid #dde1e7;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+}
+
+input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #4a6cf7;
+}
+
+button {
+  width: 100%;
+  padding: 11px;
+  background-color: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #3a5ce5;
+}
+
+button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 16px;
+  background: #e8f4fd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result .label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.result .value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a56db;
+  letter-spacing: 2px;
+}
+
+.error {
+  margin-top: 16px;
+  padding: 12px;
+  background: #fff0f0;
+  border: 1px solid #f5c6c6;
+  border-radius: 8px;
+  color: #c53030;
+  font-size: 0.9rem;
+}
+
+.validation-error {
+  font-size: 0.82rem;
+  color: #e53e3e;
+}

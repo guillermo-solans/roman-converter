@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Converter — Test Suite</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mocha@10/mocha.css">
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        h1 { font-size: 1.2rem; color: #333; margin-bottom: 4px; }
+        p  { font-size: 0.85rem; color: #666; margin-top: 0; }
+    </style>
+</head>
+<body>
+    <h1>Roman Converter — Automated Test Suite</h1>
+    <p>Guillermo Solans Millá · alu190416 · Task 4</p>
+
+    <div id="mocha"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chai@4/chai.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mocha@10/mocha.js"></script>
+    <script>mocha.setup('bdd');</script>
+
+    <script src="script.js"></script>
+    <script src="tests.js"></script>
+
+    <script>mocha.run();</script>
+</body>
+</html>

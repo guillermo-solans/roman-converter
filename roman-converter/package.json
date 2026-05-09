@@ -1,0 +1,18 @@
+{
+  "name": "roman-converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "fuser -k 5000/tcp 4200/tcp 2>/dev/null; true",
+    "start": "PATH=$HOME/.dotnet:$PATH concurrently --names \"backend,frontend\" --prefix-colors \"blue,green\" \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "dotnet run --launch-profile http --project backend/RomanConverter.Api",
+    "start:frontend": "npm --prefix frontend start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
