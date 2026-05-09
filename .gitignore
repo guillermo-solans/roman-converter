@@ -28,3 +28,9 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Deliveries and archives
+*.zip
+*.pdf
+guillermo.solans.alu190416.md
+test-results.png
