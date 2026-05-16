@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roman Numeral Converter</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V80QB7NP51"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V80QB7NP51');
+    </script>
 </head>
 <body>
     <div class="container">
@@ -33,11 +42,21 @@
             const input = parseInt(document.getElementById('intInput').value, 10);
             const el = document.getElementById('romanResult');
             try {
-                el.textContent = toRoman(input);
+                const result = toRoman(input);
+                el.textContent = result;
                 el.className = 'result';
+                gtag('event', 'conversion_success', {
+                    direction: 'integer_to_roman',
+                    input_value: input,
+                    output_value: result
+                });
             } catch (e) {
                 el.textContent = e.message;
                 el.className = 'result error';
+                gtag('event', 'conversion_error', {
+                    direction: 'integer_to_roman',
+                    error_message: e.message
+                });
             }
         }
 
@@ -45,11 +64,21 @@
             const input = document.getElementById('romanInput').value;
             const el = document.getElementById('intResult');
             try {
-                el.textContent = toInteger(input);
+                const result = toInteger(input);
+                el.textContent = result;
                 el.className = 'result';
+                gtag('event', 'conversion_success', {
+                    direction: 'roman_to_integer',
+                    input_value: input,
+                    output_value: result
+                });
             } catch (e) {
                 el.textContent = e.message;
                 el.className = 'result error';
+                gtag('event', 'conversion_error', {
+                    direction: 'roman_to_integer',
+                    error_message: e.message
+                });
             }
         }
     </script>
